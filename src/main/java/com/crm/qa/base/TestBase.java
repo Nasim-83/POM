@@ -12,12 +12,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.GeckoDriverInfo;
+import org.openqa.selenium.support.events.WebDriverEventListener;
 
 import com.crm.qa.utils.TestUtil;
 
 public class TestBase {
 	public static Properties prop;
 	public static WebDriver driver;
+
 
 	public TestBase() throws IOException {
 		
@@ -36,6 +38,7 @@ public class TestBase {
 	public  static void initilization() throws InterruptedException {
 		
 		String browserName=prop.getProperty("browser");
+	
 		driver=new ChromeDriver();
 		
 //		if(browserName.equals("Chrome"))

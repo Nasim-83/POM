@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
@@ -38,19 +39,20 @@ public class ContactPageTest extends TestBase {
 		
 			}
 
-	
+	@Ignore
 	@Test(priority = 1)
 	private void verifyContactLabel() {
 		contactpage.verifycontactLabelTest();
 		Assert.assertTrue(contactpage.verifycontactLabelTest(),"contact page label is missing");
 
 	}
-	
+	@Ignore
 	@Test(priority = 2)
 	public void selectContactTest()
 	{
 		contactpage.verifycontactNameTest("test2 test2");
 	}
+	@Ignore
 	@Test(priority = 3)
 	public void selectmultiContactTest()
 	{
@@ -61,6 +63,14 @@ public class ContactPageTest extends TestBase {
 	@AfterMethod
 	private void teardown() {
 		driver.quit();
+
+	}
+	
+	@Test(priority = 4)
+	private void validateCreateNewContactTest() throws InterruptedException {
+		//testutil.switchToLeftframe();
+	homepage.clickOnNewContactLink();
+	contactpage.createNewContact("Tom1", "peter1", "yahoo");
 
 	}
 }

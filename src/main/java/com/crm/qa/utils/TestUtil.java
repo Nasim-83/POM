@@ -23,5 +23,10 @@ public class TestUtil extends TestBase{
 		
 	}
 	
+	public void switchToLeftframe() {
+		driver.switchTo().frame("leftpanel");
+		
+	}
+	
 
 }
